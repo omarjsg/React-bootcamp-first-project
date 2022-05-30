@@ -23,3 +23,29 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+@media (max-width: 580px) {
+  .expense-date {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 90%;
+    height: fit-content;
+    padding: 0.5rem;
+  }
+  .expense-date__month {
+    order: 2;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .expense-date__year {
+    order: 3;
+    font-size: 1rem;
+  }
+
+  .expense-date__day {
+    order: 1;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}

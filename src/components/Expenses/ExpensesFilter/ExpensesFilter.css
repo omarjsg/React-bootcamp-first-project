@@ -20,7 +20,7 @@
   font: inherit;
   padding: 0.1rem 3rem;
   font-weight: bold;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background-color: rgb(132, 132, 132);
   color: #fff;
 }
@@ -30,4 +30,10 @@
   background-color: #d6d6d6;
   color: #000;
   color-scheme: light;
+}
+
+@media (max-width: 580px) {
+  .expenses-filter__control {
+    flex-direction: column;
+  }
 }

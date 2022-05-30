@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  padding: 2rem 1rem;
 }
 
 input {
@@ -29,6 +30,8 @@ input {
   border-radius: 1rem;
   background-color: rgb(132, 132, 132);
   border: 0;
+  min-width: 0;
+  max-width: 80%;
 }
 
 .new-expense__control input:focus {
@@ -50,4 +53,21 @@ input {
 
 .new-expense__control input[type="number"] {
   -moz-appearance: textfield;
+}
+
+@media (max-width: 580px) {
+  .new-expense__controls {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .new-expense__control-amount {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .new-expense__actions {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
 }

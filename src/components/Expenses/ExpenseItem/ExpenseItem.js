@@ -9,10 +9,12 @@ const ExpenseItem = (props) => {
                 <ExpenseDate date={props.date} />
                 <div className='expense-item__description'>
                     <h2>{props.title}</h2>
-                    <div className='expense-item__price'>
-                        {props.amount}
+                    <div className='expense-item__price-container'>
+                        <div className='expense-item__price'>
+                            {props.amount}
+                        </div>
+                        <p className='expense-item__currency'>{'SAR'}</p>
                     </div>
-                    <p className='expense-item__currency'>{'SAR'}</p>
                 </div>
             </Card>
         </li>
