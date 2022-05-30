@@ -17,6 +17,6 @@ const ExpenseDate = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default ExpenseDate;

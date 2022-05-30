@@ -1,15 +1,23 @@
 import './Expenses.css'
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
+import ExpensesList from '../ExpensesList/ExpensesList';
 import Card from '../../UI/Card/Card';
+import ExpensesFilter from '../ExpensesFilter/ExpensesFilter';
+import { useState } from 'react';
+import ExpensesChart from '../ExpensesChart/ExpensesChart';
 
 const Expenses = (props) => {
-    const expenses = props.expenses;
+    const [selectedYear, setSelectedYear] = useState('2022');
+    const selectYearHandler = (year) => {
+        setSelectedYear(year);
+    };
+
+    const filteredExpenses = props.expenses.filter((expense => expense.date.getFullYear().toString() === selectedYear));
+
     return (
         <Card className='expenses'>
-            <ExpenseItem title={expenses[0].title} date={expenses[0].date} amount={expenses[0].amount} />
-            <ExpenseItem title={expenses[1].title} date={expenses[1].date} amount={expenses[1].amount} />
-            <ExpenseItem title={expenses[2].title} date={expenses[2].date} amount={expenses[2].amount} />
-            <ExpenseItem title={expenses[3].title} date={expenses[3].date} amount={expenses[3].amount} />
+            <ExpensesChart expenses={filteredExpenses} />
+            <ExpensesFilter selected={selectedYear} onSelectYear={selectYearHandler} />
+            <ExpensesList expenses={filteredExpenses} />
         </Card>
     );
 }
